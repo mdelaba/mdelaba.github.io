@@ -14,13 +14,18 @@ a { color: #2563eb; }
 <p>Last updated: 8 November 2026.</p>
 <p>gdrive-mcp is a private tool used only by its developer, so that software the developer runs on their own computers and servers can work with the developer's own Google Drive (for example, daily backups of personal project data). This policy describes what the app does with Google user data.</p>
 <h2>Data the app accesses</h2>
-<p>The app requests one Google permission, <code>https://www.googleapis.com/auth/drive.file</code>. With it, the app can create files in Google Drive and read or change only the files it created. It cannot see any other file or folder in the Drive. The app does not request access to email, contacts, calendar or profile information.</p>
+<p>The app uses two Google permissions, each for the developer's own account only:</p>
+<ul>
+<li><code>https://www.googleapis.com/auth/drive.file</code>: used by scheduled backup jobs. It lets the job create files in Google Drive and read or change only the files it created. It cannot see any other file or folder.</li>
+<li><code>https://www.googleapis.com/auth/drive</code>: used by a personal MCP server for Google Drive. It lets the developer's AI assistants, when the developer asks, search, read, create and edit files in the developer's own Drive.</li>
+</ul>
+<p>The app does not request access to email, contacts, calendar or profile information.</p>
 <h2>How the data is used</h2>
-<p>The app creates and updates files in the developer's own Drive, such as uploads of backup data from the developer's own server. It uses the permission for that purpose only. If the app ever asks for a broader permission, this policy will be updated first.</p>
+<p>The backup jobs upload data files from the developer's own server to a Drive folder. The MCP server acts only on the developer's own requests. When the developer asks an AI assistant to read a file, the file's contents are given to that assistant for that request. The app does not use Drive data for anything else, and does not use it for advertising or to train AI models.</p>
 <h2>Storage and sharing</h2>
-<p>The app's access tokens are stored on the developer's own private computers and servers and nowhere else. The app does not collect, sell, share or transfer Google user data to anyone, and there are no third-party servers, analytics or advertising in the app. The app's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<p>The app's access tokens are stored on the developer's own private computers and servers and nowhere else. The app does not collect, sell or share Google user data with anyone other than the developer's own AI assistant as described above, and there are no analytics or advertising in the app. The app's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 <h2>Retention and removal</h2>
-<p>Files the app creates stay in the Drive until the Drive's owner deletes them. Access can be revoked at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, after which the app can no longer reach the Drive.</p>
+<p>Files stay in the Drive until the Drive's owner deletes them. Access can be revoked at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, after which the app can no longer reach the Drive. If the app ever asks for a different permission, this policy will be updated first.</p>
 <h2>Contact</h2>
 <p>Questions about this policy: <a href="https://github.com/mdelaba">github.com/mdelaba</a>.</p>
 </body>

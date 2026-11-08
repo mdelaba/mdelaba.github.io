@@ -11,13 +11,13 @@ a { color: #2563eb; }
 </head>
 <body>
 <h1>gdrive-mcp</h1>
-<p>gdrive-mcp is a small private tool for one person: its developer. It lets software the developer runs on their own computers and servers (an MCP server for Google Drive and scheduled backup jobs) work with the developer's own Google Drive.</p>
+<p>gdrive-mcp is a small private tool for one person: its developer. It lets software the developer runs on their own computers and servers work with the developer's own Google Drive: a personal MCP server for Google Drive, used by the developer's own AI assistants, and scheduled backup jobs.</p>
 <h2>What it does</h2>
 <ul>
-<li>Creates and updates files in the developer's own Google Drive, for example daily backups of personal project data.</li>
-<li>Asks Google for only the <code>drive.file</code> permission, so it can see and change only the files it created itself. It cannot read any other file in the Drive.</li>
+<li><strong>Backup jobs</strong> use only the <code>drive.file</code> permission: they can see and change only the files they created themselves.</li>
+<li><strong>The personal MCP server</strong> uses the <code>drive</code> permission, so that when the developer asks, an AI assistant can search, read, create and edit files in the developer's own Drive.</li>
 </ul>
-<p>The app is not offered to the public and has no sign-up. Its only user is the developer.</p>
+<p>The app is not offered to the public and has no sign-up. Its only user is the developer, and it only ever accesses the developer's own Drive.</p>
 <p><a href="privacy.html">Privacy policy</a> &middot; <a href="https://github.com/mdelaba">Developer on GitHub</a></p>
 </body>
 </html>
